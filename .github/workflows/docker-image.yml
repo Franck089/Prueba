@@ -23,7 +23,7 @@ jobs:
       - name: autoDeploy
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
-          image: ipsilon0/prueba
+          image: ipsilon0/prueba2
           registry: docker.io
           dockerfile: docker/Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
