@@ -2,9 +2,7 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ staging ]
-  pull_request:
-    branches: [ staging ]
+    branches: [ staging, autoDeploy ]
 
 jobs:
 
@@ -13,6 +11,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      - uses: actions/checkout@v2
+      - name: autoDeploy
+        uses: mr-smithers-excellent/docker-build-push@v5
+        with:
+          image: ipsilon0/prueba
+          registry: docker.io
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
