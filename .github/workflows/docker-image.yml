@@ -12,6 +12,14 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      - name: autoDeployPutoCholo
+        uses: mr-smithers-excellent/docker-build-push@v5
+        with:
+          image: ipsilon0/prueba
+          registry: docker.io
+          dockerfile: docker/Dockerfile_builder
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
       - name: autoDeploy
         uses: mr-smithers-excellent/docker-build-push@v5
         with:

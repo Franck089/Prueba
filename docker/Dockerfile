@@ -1,5 +1,5 @@
 
-FROM cervecera
+FROM ipsilon0/prueba
 LABEL maintainer="damaris.zavala@erona.io"
 
 WORKDIR /schela
