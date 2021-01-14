@@ -16,7 +16,7 @@ jobs:
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
           image: ipsilon0/prueba
-          tag: pruebabuilder
+          tags: pruebabuilder
           registry: docker.io
           dockerfile: docker/Dockerfile_builder
           username: ${{ secrets.DOCKER_USERNAME }}
@@ -25,7 +25,7 @@ jobs:
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
           image: ipsilon0/prueba
-          tag: pruebaFile
+          tags: pruebaFile
           registry: docker.io
           dockerfile: docker/Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
