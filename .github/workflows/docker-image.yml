@@ -16,18 +16,16 @@ jobs:
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
           image: ipsilon0/prueba
-          tag: v1
+          tag: pruebabuilder
           registry: docker.io
           dockerfile: docker/Dockerfile_builder
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-    steps:
-      - uses: actions/checkout@v2
       - name: autoDeploy
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
           image: ipsilon0/prueba
-          tag: v2
+          tag: pruebaFile
           registry: docker.io
           dockerfile: docker/Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
